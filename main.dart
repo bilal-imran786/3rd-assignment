@@ -1,71 +1,164 @@
+
+
 void main() {
-  // fist question
-  List names = ['Ali', 'Bilal', 'Hina', 'Sara', 'Ahmed'];
-
-  print("All names:");
+  // Q1
+  List<String> names = ["Ali", "Sara", "Ali", "Bilal", "Sara"];
+  List<String> uniqueNames = [];
   for (var name in names) {
-    print(name);
+    if (!uniqueNames.contains(name)) {
+      uniqueNames.add(name);
+    }
   }
-  // second question
-  List days = [
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
-    'Sunday',
-  ];
+  print("Q1: Original List:");
+  print(names);
+  print("Without Duplicates:");
+  print(uniqueNames);
 
-  print("Only Sunday:");
-  print(days[6]);
-  // third question
-  List student = ['Bilal', '10th', 23, 'A+', 89.5];
+  // Q2
+  List<int> numbers = [10, 20, 30, 40, 50];
+  int n = 3;
+  List<int> firstN = numbers.take(n).toList();
+  print("Q2: Original List:");
+  print(numbers);
+  print("First n elements:");
+  print(firstN);
 
-  print("Name: ");
-  print(student[0]);
-  print("Class: ");
-  print(student[1]);
-  print("Roll No: ");
-  print(student[2]);
-  print("Grade: ");
-  print(student[3]);
-  print("Percentage: ");
-  print(student[4]);
-  // fourth question
-  List numbers = [12, 45, 7, 23, 89, 3, 56];
-
-  numbers.sort();
-  print("Smallest number:");
-  print(numbers.first);
-  print("Greatest number:");
-  print(numbers.last);
-  // fifth question
-  List number = [5, 17, 9, 33, 21];
-  int maxValue = number.reduce((a, b) => a > b ? a : b);
-
-  print("Maximum value:");
-  print(maxValue);
-  // six question
-  List fruits = ['Apple', 'Banana', 'Mango', 'Orange'];
-  List reversed = fruits.reversed.toList();
-
-  print("Original list:");
+  // Q3
+  List<String> fruits = ["Apple", "Banana", "Mango"];
+  List<String> reversedFruits = fruits.reversed.toList();
+  print("Q3: Original List:");
   print(fruits);
-  print("Reversed list:");
-  print(reversed);
-  // seven question
-  List numb = [12, -5, 7, -3, 9, 0, -8];
-  List positiveNumber = numb.where((n) => n >= 0).toList();
+  print("Reversed List:");
+  print(reversedFruits);
 
-  print("Original list:");
-  print(numb);
-  print("Positive number:");
-  print(positiveNumber);
-  // eight question
-  List usersEligibility = ['John', 'Alice', 'eligible', 'Mike', 'Sarah', 'Tom'];
+  // Q4
+  List<int> nums1 = [2, 4, 2, 6, 4, 8];
+  List<int> uniqueNums = [];
+  for (var num in nums1) {
+    if (!uniqueNums.contains(num)) {
+      uniqueNums.add(num);
+    }
+  }
+  print("Q4: Original List:");
+  print(nums1);
+  print("Unique List:");
+  print(uniqueNums);
 
-  usersEligibility.removeWhere((element) => element != 'eligible');
+  // Q5
+  List<int> nums2 = [5, 2, 8, 1, 3];
+  List<int> sortedList = List.from(nums2);
+  sortedList.sort();
+  print("Q5: Original List:");
+  print(nums2);
+  print("Sorted List:");
+  print(sortedList);
 
-  print(usersEligibility);
+  // Q6
+  List<int> numbers6 = [5, -3, 8, -2, 10];
+  List<int> positive = numbers6.where((n) => n >= 0).toList();
+  print("Q6: Original List:");
+  print(numbers6);
+  print("Positive Numbers:");
+  print(positive);
+
+  // Q7
+  List<int> nums7 = [1, 2, 3, 4, 5, 6];
+  List<int> evenNums = nums7.where((n) => n % 2 == 0).toList();
+  print("Q7: Original List:");
+  print(nums7);
+  print("Even Numbers:");
+  print(evenNums);
+
+  // Q8 (Option 1)
+  List<int> numbers8 = [2, 4, 6];
+  List<int> squares = numbers8.map((n) => n * n).toList();
+  print("Q8: Original List:");
+  print(numbers8);
+  print("Squared List:");
+  print(squares);
+
+  // Q8 (Option 2)
+  Map<String, dynamic> person = {"name": "John", "age": 25, "isStudent": true};
+  if (person["isStudent"] == true && person["age"] > 18) {
+    print("Q8 Option 2: Eligible");
+  } else {
+    print("Q8 Option 2: Not eligible");
+  }
+
+  // Q9
+  Map<String, dynamic> product = {"name": "Laptop", "price": 80000, "quantity": 5};
+  if (product["quantity"] > 0) {
+    print("Q9: In stock");
+  } else {
+    print("Q9: Out of stock");
+  }
+
+  // Q10
+  Map<String, dynamic> car = {"brand": "Toyota", "color": "Red", "isSedan": true};
+  if (car["isSedan"] == true && car["color"] == "Red") {
+    print("Q10: Match");
+  } else {
+    print("Q10: No match");
+  }
+
+  // Q11
+  Map<String, dynamic> user = {"name": "Bilal", "isAdmin": true, "isActive": true};
+  if (user["isAdmin"] == true && user["isActive"] == true) {
+    print("Q11: Active admin");
+  } else {
+    print("Q11: Not an active admin");
+  }
+
+  // Q12
+  Map<String, int> cart = {"Apple": 3, "Banana": 5, "Orange": 2};
+  if (cart.containsKey("Apple")) {
+    print("Q12: Product found");
+  } else {
+    print("Q12: Product not found");
+  }
+
+  // Q13
+  print("Q13: Difference between List and Map");
+  print("List stores values in order using index");
+  print("Map stores key-value pairs");
+  print("Example List: [1,2,3]");
+  print("Example Map: {'name':'Ali','age':20}");
+
+  // Q14
+  print("Q14: 5++ gives error because 5 is a constant and cannot be changed.");
+
+  // Q15
+  print("Q15: a = a + 1 and a++ both increase value by 1, but a++ is post increment.");
+  print("Example:");
+  int a = 5;
+  print(a);
+  print(a++);
+  print(a);
+  print(++a);
+
+  // List & Map methods examples
+  List<int> nums = [3, 6, 9];
+  Map<String, int> marks = {"Ali": 90, "Sara": 85};
+
+  nums.add(12);
+  nums.remove(6);
+  print("Contains 9:");
+  print(nums.contains(9));
+  nums.sort();
+  print("Reversed:");
+  print(nums.reversed);
+  print("Length:");
+  print(nums.length);
+  print("First element:");
+  print(nums.first);
+  print("Last element:");
+  print(nums.last);
+  print("Map Keys:");
+  print(marks.keys);
+  print("Map Values:");
+  print(marks.values);
 }
+
+
+  
+  
